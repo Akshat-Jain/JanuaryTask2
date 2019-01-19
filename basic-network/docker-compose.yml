@@ -22,7 +22,7 @@ services:
     volumes:
       - ./crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
     extra_hosts:
-    - "peer1.org1.example.com:192.168.237.255"
+    - "peer1.org1.example.com:192.168.237.129"
     container_name: ca.example.com
     networks:
       - basic
@@ -46,7 +46,7 @@ services:
         - ./crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/:/etc/hyperledger/msp/orderer
         - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/msp/peerOrg1
     extra_hosts:
-    - "peer1.org1.example.com:192.168.237.255"
+    - "peer1.org1.example.com:192.168.237.129"
     networks:
       - basic
 
@@ -84,7 +84,7 @@ services:
         - ./crypto-config/peerOrganizations/org1.example.com/users:/etc/hyperledger/msp/users
         - ./config:/etc/hyperledger/configtx
     extra_hosts:
-    - "peer1.org1.example.com:192.168.237.255"
+    - "peer1.org1.example.com:192.168.237.129"
     depends_on:
       - orderer.example.com
       - couchdb
